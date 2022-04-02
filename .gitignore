@@ -2,3 +2,7 @@
 *.project
 *.prefs
 *.class
+*.jpg
+*.html
+*.png
+test-output/
