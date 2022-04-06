@@ -20,10 +20,6 @@ public class RightClickExample extends Basetest {
 		//action.sendKeys(Keys.ARROW_DOWN).build().perform();
 		
 		
-		//WebElement element1 = getDriver().findElement(By.linkText("Back"));
-		//element1.click();
-		
-		
 		Thread.sleep(3000);
 		tearDown();
 
