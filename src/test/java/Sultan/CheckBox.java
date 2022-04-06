@@ -1,18 +1,15 @@
-package SeleniumBrowserOpen;
+package Sultan;
 
-import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class checkBoxes {
+public class CheckBox {
 	public static void main(String[] args) throws InterruptedException {
 		WebDriverManager.chromedriver().setup();
 		RemoteWebDriver driver = new ChromeDriver();
@@ -20,10 +17,12 @@ public class checkBoxes {
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.findElement(By.xpath("//input[@name='remember']")).click();
+		driver.findElement(By.xpath("//input[@title='Sign in']")).click();
+		Thread.sleep(5000);
 		Alert alert = driver.switchTo().alert();
 		System.out.println(alert.getText());
 		alert.accept();
 		Thread.sleep(10000);
 		driver.close();
-	}
+}
 }
