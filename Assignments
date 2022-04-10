@@ -1,3 +1,9 @@
 1. iframe --> without using frame id and name how to switch to a frame.
 2. RighClick ---> Click on any element after doing the right click.
 3. Send keys like Ctrl+a , Ctrl+c and Ctrl+v on https://www.wikipedia.org/
+
+java -Dwebdriver.chrome.driver="C:\Users\Saurav Goyal\Desktop\Selenium\chromedriver.exe" 
+-jar "C:\Users\Saurav Goyal\Desktop\Selenium\selenium-server-standalone-3.141.59.jar" 
+-role node -hub http://10.0.0.203:5565/grid/register/
+
+java -jar selenium-server-standalone-3.141.59.jar -role hub -port 5565

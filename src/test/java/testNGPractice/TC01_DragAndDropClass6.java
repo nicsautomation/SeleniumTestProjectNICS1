@@ -27,7 +27,7 @@ import org.testng.asserts.SoftAssert;
 
 import com.beust.jcommander.Parameter;
 
-public class TC01_DragAndDropClass extends Basetest{
+public class TC01_DragAndDropClass6 extends Basetest{
 	
 	
 	
@@ -68,6 +68,11 @@ public class TC01_DragAndDropClass extends Basetest{
 		Date d = new Date();
 		System.out.println(d.toString());
 		System.out.println("TC01");
+		startSession("https://demoqa.com/droppable/");
+		File file = ((TakesScreenshot) getDriver()).getScreenshotAs(OutputType.FILE);
+		FileUtils.copyFile(file, new File(".//ScreenShots/err.jpg"));
+		Thread.sleep(3000);
+		tearDown();
 		System.out.println("TC01");
 		
 	}

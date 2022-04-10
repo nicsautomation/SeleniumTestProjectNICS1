@@ -18,7 +18,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class TC02_DragAndDropClass2 extends Basetest{
+public class TC02_DragAndDropClass5 extends Basetest{
 	
 	@Test(groups = "sanity")
 	public void multiply() throws InterruptedException, MalformedURLException {

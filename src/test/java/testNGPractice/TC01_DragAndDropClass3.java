@@ -27,7 +27,7 @@ import org.testng.asserts.SoftAssert;
 
 import com.beust.jcommander.Parameter;
 
-public class TC01_DragAndDropClass extends Basetest{
+public class TC01_DragAndDropClass3 extends Basetest{
 	
 	
 	
@@ -67,8 +67,8 @@ public class TC01_DragAndDropClass extends Basetest{
 	public void multiply() throws InterruptedException, IOException {
 		Date d = new Date();
 		System.out.println(d.toString());
-		System.out.println("TC01");
-		System.out.println("TC01");
+		System.out.println("TC03");
+		System.out.println("TC03");
 		
 	}
 	

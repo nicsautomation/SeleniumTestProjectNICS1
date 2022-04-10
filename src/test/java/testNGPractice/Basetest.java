@@ -1,50 +1,59 @@
 package testNGPractice;
 
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.HashMap;
 import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeOptions;
+import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.ie.InternetExplorerOptions;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class Basetest {
 
-	private static WebDriver driver;
+	private WebDriver driver;
 	
 
-	public static WebDriver getDriver() {
+	public WebDriver getDriver() {
 		return driver;
 	}
 
 
-	public static void startSession(String url) {
-		ChromeOptions options = new ChromeOptions();
-		WebDriverManager.chromedriver().setup();
-		options.addArguments("--start-maximized");
-		options.addArguments("--incognito");
-		options.setAcceptInsecureCerts(true);
-		HashMap<String, String> mobile_Emulation= new HashMap<String, String>();
-		mobile_Emulation.put("deviceName", "iPhone SE");
-		options.setExperimentalOption("mobileEmulation", mobile_Emulation);
-		driver = new ChromeDriver(options);
+	public void startSession(String url) throws MalformedURLException {
+		//ChromeOptions options = new ChromeOptions();
+		
+		WebDriverManager.iedriver().browserVersion("100.0.1185.36").setup();
+		InternetExplorerOptions fo = new InternetExplorerOptions();
+		DesiredCapabilities cap = new DesiredCapabilities();
+		cap.setPlatform(Platform.WINDOWS);
+		cap.setBrowserName("InternetExplorer");
+		fo.merge(cap);
+		driver = new RemoteWebDriver( new URL("http://10.0.0.203:5565/wd/hub") , cap);
 		driver.get(url);
 		//driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	}
 	
 	
-	public static void tearDown() {
+	public void tearDown() {
 		driver.quit();
 	}
 	
-	public static void click(WebElement element) {
+	public void click(WebElement element) {
 		element.click();
 	}
 	
 	
-	public static void sendkeys(WebElement element , String Value) {
+	public void sendkeys(WebElement element , String Value) {
 		element.sendKeys(Value);
 	}
 	
