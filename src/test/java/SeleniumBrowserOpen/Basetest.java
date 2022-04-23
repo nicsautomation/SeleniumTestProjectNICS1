@@ -1,11 +1,13 @@
 package SeleniumBrowserOpen;
 
+import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.testng.annotations.Test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -19,7 +21,15 @@ public class Basetest {
 	}
 
 
+	@Test
+	public void beforeTest(Method method) {
+	System.out.println(method.getName());
+		
+}
+	
+	
 	public static void startSession(String url) {
+		//System.out.println(m.getName());
 		ChromeOptions options = new ChromeOptions();
 		WebDriverManager.chromedriver().setup();
 		options.addArguments("--start-maximized");
