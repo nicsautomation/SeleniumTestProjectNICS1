@@ -7,7 +7,7 @@ import org.openqa.selenium.interactions.Actions;
 
 import SeleniumBrowserOpen.Basetest;
 
-public class RightClickExample extends Basetest {
+public class RightClickExample extends Basetest2 {
 	public static void main(String[] args) throws InterruptedException {
 		startSession("https://demoqa.com/droppable/");
 		Actions action = new Actions(getDriver());
@@ -19,7 +19,7 @@ public class RightClickExample extends Basetest {
 		//action.moveToElement(element).contextClick(element).perform();
 		//action.sendKeys(Keys.ARROW_DOWN).build().perform();
 		
-		
+		action.contextClick(element).sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.RETURN).build().perform();
 		Thread.sleep(3000);
 		tearDown();
 
